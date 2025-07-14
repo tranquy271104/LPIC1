@@ -1,2 +1,117 @@
+                                                                              Cấu trúc cây thư mục của hệ điều hành Linux
+hiểu tổng quát một số thư mục gốc (/, /bin, /boot ...) của linux => sau này hiểu hơn 
+3 kiểu file: regular file (tệp thông thường), directory (thư mục) chứa và quản lý được thư mục hoạc file khác,  special (tệp đặc biêt) đại diện cho thiết bị phần cứng
+Từ khóa viết tắt liên quan đến file / thư mục => sau này hiểu hơn 
+file ẩn: bắt đầu bằng dấu "." , để hiện ra dùng lệnh "ls -a"
+Đường dẫn: tuyệt đối ( /home/user/...) , tương đối: xuất phát từ nơi đang làm việc ( ../Picture/photo.jpg) 
+linux: /
+windown: \
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                          Cách sử dụng Terminal và cú pháp câu lệnh trong Linux
+cấu trúc của một câu lệnh: command [options] [arguments]
+options : bắt đầu bằng "-" hoạc "--"
+lệnh: man <tên lệnh> : tài liệu hướng dẫn cho <tên lệnh>  "Q" để thoát 
 Ctrl+alt+t -> mở Terminal
-Trong Terminal dùng tổ hợp Ctrl+d để thoát khỏi hoặc nhập lệnh exit 
+Ctrl+shift+t -> mở một Terminal tab mới 
+Ctrl+d -> để thoát khỏi terminal/đóng tab hiện tại hoặc nhập lệnh exit để thoát 
+Ctrl+c -> để ngắt dòng lệnh đang chạy 
+dùng dấu mũi tên để chọn câu lệnh
+ctrl u: xóa từ con trỏ đến đầu dòng (trl K thì ngược lại)
+ctr a: quay con trỏ về đầu dòng (E ngược lại)
+ctrl shilf + c/v : sao chép hoạc dán
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                     Lệnh Sudo và cách đặt mật khẩu cho tài khoản root trong Linux
+lệnh: sudo (superuser do)  (lệnh có quyền hạn cao nhất nó yêu cầu pass để chạy)
+đi cùng với lênh này có: sudo apt update (kiểm tra các gói update) , sudo apt upgrade (update các gói này)
+tạo passwd cho user: passwd [username] , tạo pass cho root: sudo passwd root
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                               Lệnh in thư mục hiện hành (pwd) và lệnh thay đổi thư mục (cd) của Linux
+Pwd (print working directory) : in ra vị trí hiện tại mình đang làm việc
+Lệnh cd [đường dẫn/kí hiệu] di chuyển giữa các vị trí (học thêm một số kí hiệu đi kèm) (change directory)
+1. cd ~  hoặc cd (không có gì) – Cũng về thư mục Home
+      Tác dụng: chuyển đến thư mục /home/tên_user.
+      Ví dụ: nếu bạn là tranquy, thì sẽ về /home/tranquy.
+2. cd /đường/dẫn/đầy/đủ – Đi tới thư mục theo đường dẫn tuyệt đối
+      cd /etc/network
+      Chuyển tới thư mục /etc/network.
+3. cd thư_mục_con – Đi tới thư mục con của thư mục hiện tại
+      cd Documents
+      Chuyển tới thư mục Documents nằm trong thư mục hiện tại.
+4. cd .. – Quay lại thư mục cha (lùi một cấp)
+      cd ..
+      Ví dụ: đang ở /home/tranquy/Documents, chạy cd .. sẽ về /home/tranquy.
+5. cd ../.. – Quay lại hai cấp
+      cd ../..
+      Nếu đang ở /home/tranquy/Documents, thì chạy cd ../.. sẽ về /home.
+6. cd - – Quay lại thư mục trước đó
+      cd -
+      Ví dụ: bạn chuyển từ /etc sang /var, chạy cd - sẽ quay lại /etc.
+7. cd / – Về thư mục gốc (root directory)
+      cd /
+      Về thư mục gốc /, là nơi chứa tất cả thư mục hệ thống như bin, etc, home,...
+8. cd ./tên_thư_mục – Di chuyển đến thư mục con trong thư mục hiện tại
+      cd ./Downloads
+      Tương đương với cd Downloads. Dấu ./ đại diện cho "thư mục hiện tại".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
