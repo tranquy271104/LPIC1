@@ -27,7 +27,9 @@ tạo passwd cho user: passwd [username] , tạo pass cho root: sudo passwd root
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                                                                Lệnh in thư mục hiện hành (pwd) và lệnh thay đổi thư mục (cd) của Linux
 Pwd (print working directory) : in ra vị trí hiện tại mình đang làm việc
-Lệnh cd [đường dẫn/kí hiệu] di chuyển giữa các vị trí (học thêm một số kí hiệu đi kèm) (change directory)
+Lệnh cd – Change Directory (chuyển thư mục)
+      ➤ Cú pháp: cd [đường/dẫn/thư/mục]
+      ➤ Mục đích: Dùng để di chuyển giữa các thư mục trong hệ thống tệp (filesystem).
 1. cd ~  hoặc cd (không có gì) – Cũng về thư mục Home
       Tác dụng: chuyển đến thư mục /home/tên_user.
       Ví dụ: nếu bạn là tranquy, thì sẽ về /home/tranquy.
@@ -52,10 +54,15 @@ Lệnh cd [đường dẫn/kí hiệu] di chuyển giữa các vị trí (học 
 8. cd ./tên_thư_mục – Di chuyển đến thư mục con trong thư mục hiện tại
       cd ./Downloads
       Tương đương với cd Downloads. Dấu ./ đại diện cho "thư mục hiện tại".
-
-
-
-
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                            Các lệnh quản lý file và thư mục trong Linux
+Lệnh ls – List (liệt kê nội dung thư mục)
+      ➤ Cú pháp: ls [tùy_chọn] [đường/dẫn]
+      ➤ Mục đích: Hiển thị danh sách file và thư mục bên trong một thư mục.
+ls -L : hiển thị danh sách file ( chỉ hiện thị tên)
+ls -l : hiển thị danh sách file bao gồm các cột 
+ls -a : liệt kê tất cả file bao gồm file ẩn 
+ls -R : liệt kê tất cả các file bao gồm file bên trong mục con 
 
 
 
