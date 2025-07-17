@@ -63,12 +63,24 @@ ls -L : hiển thị danh sách file ( chỉ hiện thị tên)
 ls -l : hiển thị danh sách file bao gồm các cột 
 ls -a : liệt kê tất cả file bao gồm file ẩn 
 ls -R : liệt kê tất cả các file bao gồm file bên trong mục con 
-
-
-
-
-
-
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+cat : Hiển thị toàn bộ nội dung của một (hoặc nhiều) tập tin văn bản ra màn hình (stdout).
+uname hoặc uname -s : hển thị thông tin hệ điều hành 
+Lệnh uname -m : dùng để hiển thị kiến trúc máy tính (machine hardware name) mà hệ điều hành đang chạy trên đó.
+uname -rm hiển thị phiên bản kernel và kiến trúc máy cùng lúc.
+uname -a : hiển thị tất cả thông tin 
+Lệnh lsmod dùng để liệt kê (hiển thị) tất cả các module kernel đang được nạp (load) trên hệ thống Linux của bạn.
+    Mục đích chính của lsmod:
+        Xem những module nào đang hoạt động trong kernel.
+        Kiểm tra xem driver phần cứng hoặc các tính năng mở rộng đã được kernel sử dụng chưa.
+        Hỗ trợ quản trị viên hệ thống và lập trình viên khi cần debug, quản lý module, hoặc xác định nguyên nhân sự cố liên quan đến phần cứng hoặc kernel.
+modinfo: xem thông tin chi tiết của một module cụ thể.
+modprobe <module>	Nạp module vào kernel
+modprobe -r <module>	Gỡ module khỏi kernel
+      rmmod nvme         # Gỡ phần phụ (driver cụ thể)
+      modprobe -r nvme_core   # Sau đó mới gỡ phần lõi
+Nạp (thêm) module	modprobe <module>	Thêm module vào kernel
+Gỡ (remove) module	modprobe -r <module>	Gỡ module khỏi kernel
 
 
 
