@@ -81,12 +81,51 @@ modprobe -r <module>	Gỡ module khỏi kernel
       modprobe -r nvme_core   # Sau đó mới gỡ phần lõi
 Nạp (thêm) module	modprobe <module>	Thêm module vào kernel
 Gỡ (remove) module	modprobe -r <module>	Gỡ module khỏi kernel
-
-
-
-
-
-
+ls /dev trong Linux là lệnh dùng để liệt kê tất cả các tập tin thiết bị (device files) hiện có trong thư mục /dev
+lspci trong Linux được dùng để liệt kê tất cả các thiết bị PCI (Peripheral Component Interconnect) có trong hệ thống.
+lspci -v trong Linux dùng để liệt kê chi tiết các thiết bị PCI/PCIe đang kết nối với hệ thống. So với lspci thông thường, tuỳ chọn -v (viết tắt của verbose) sẽ hiển thị nhiều thông tin kỹ thuật hơn cho từng thiết bị.
+Lệnh lsusb trong Linux dùng để liệt kê tất cả các thiết bị USB đang được kết nối vào hệ thống. Đây là công cụ rất quan trọng khi bạn làm quản trị hệ thống hoặc IT support – đặc biệt để kiểm tra xem USB, chuột, bàn phím, webcam, thẻ nhớ... có được nhận hay không.
+Lệnh lsusb -t trong Linux hiển thị cấu trúc dạng cây (tree topology) của các thiết bị USB đang được kết nối vào hệ thống. Nó giúp bạn hiểu rõ thiết bị nào đang cắm vào cổng USB nào, tốc độ truyền tải, và cấp độ bus/cổng.
+Lệnh lscpu trong Linux được dùng để hiển thị thông tin chi tiết về CPU (bộ vi xử lý) của hệ thống hiện tại
+Lệnh lsblk trong Linux được dùng để liệt kê thông tin về các thiết bị lưu trữ dạng block (block devices) như:
+          Ổ cứng (HDD, SSD)
+          USB
+          Ổ đĩa ảo
+          Phân vùng (partition)
+          Thiết bị LVM
+Lệnh lsblk -f trong Linux dùng để hiển thị thông tin chi tiết về các thiết bị lưu trữ block cùng với loại hệ thống tập tin (filesystem) của chúng. Đây là cách nhanh chóng để bạn biết phân vùng đó đang dùng filesystem gì, có được gắn (mounted) ở đâu, và nhãn (label) hay UUID của nó.
+| Lệnh                | Mục đích chính                                                 |
+| ------------------- | -------------------------------------------------------------- |
+| `awk`               | Xử lý và trích xuất dữ liệu (thường dùng với output lệnh)      |
+| `blkid`             | Hiển thị thông tin UUID và filesystem của các phân vùng        |
+| `cat /proc/cpuinfo` | Xem chi tiết thông tin CPU                                     |
+| `cat /proc/meminfo` | Xem thông tin bộ nhớ RAM                                       |
+| `dmidecode`         | Xem thông tin phần cứng hệ thống (BIOS, RAM, mainboard...)     |
+| `df`                | Hiển thị dung lượng ổ đĩa đang dùng                            |
+| `dmesg`             | Xem log kernel, dùng để debug thiết bị phần cứng               |
+| `free`              | Xem tổng quan RAM và swap                                      |
+| `hdparm`            | Kiểm tra và điều chỉnh thông số ổ cứng                         |
+| `hwinfo`            | Thông tin chi tiết phần cứng (cần cài thêm trên một số distro) |
+| `iostat`            | Thống kê hoạt động I/O thiết bị lưu trữ                        |
+| `ip`                | Quản lý mạng, xem cấu hình card mạng                           |
+| `lscpu`             | Hiển thị thông tin CPU                                         |
+| `lsblk`             | Liệt kê thiết bị block (ổ đĩa, phân vùng)                      |
+| `lshw`              | Hiển thị thông tin phần cứng chi tiết                          |
+| `lsusb`             | Liệt kê thiết bị USB đang kết nối                              |
+| `lspci`             | Liệt kê thiết bị PCI (card mạng, đồ họa, âm thanh...)          |
+| `lsmod`             | Hiển thị module kernel đang được load (driver thiết bị)        |
+| `memtest`           | Kiểm tra RAM (thường dùng ngoài Linux, boot riêng)             |
+| `modprobe`          | Nạp hoặc xóa module kernel (driver)                            |
+| `mount`             | Gắn thiết bị lưu trữ vào hệ thống tập tin                      |
+| `nvme`              | Quản lý ổ NVMe (SSD PCIe)                                      |
+| `parted`            | Quản lý phân vùng ổ đĩa                                        |
+| `ping`              | Kiểm tra kết nối mạng (kiểm tra thiết bị mạng hoạt động)       |
+| `smartctl`          | Kiểm tra tình trạng ổ cứng SMART                               |
+| `sensors`           | Đọc cảm biến nhiệt độ, điện áp, quạt                           |
+| `top`               | Giám sát tài nguyên hệ thống (CPU, RAM)                        |
+| `uptime`            | Thời gian hệ thống hoạt động                                   |
+| `vmstat`            | Thống kê sử dụng bộ nhớ và CPU                                 |
+| `watch`             | Thực thi lệnh lặp lại theo thời gian (giám sát thay đổi)       |
 
 
 
