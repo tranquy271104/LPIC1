@@ -64,6 +64,96 @@ ls -l : hiển thị danh sách file bao gồm các cột
 ls -a : liệt kê tất cả file bao gồm file ẩn 
 ls -R : liệt kê tất cả các file bao gồm file bên trong mục con 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Pseudo File Systems trong Linux
+==============================
+
+**Pseudo file systems** (hệ thống tập tin giả) trong Linux là những hệ thống tập tin đặc biệt không lưu 
+trữ dữ liệu trên đĩa mà được tạo ra trong bộ nhớ RAM để cung cấp thông tin về trạng thái hệ thống hoặc 
+tương tác với kernel và phần cứng theo cách đặc biệt.
+
+---
+
+1. Định nghĩa
+------------
+
+- Không phải là hệ thống tập tin vật lý trên ổ đĩa.
+- Thường cung cấp giao diện để truy cập thông tin runtime của kernel, thiết bị, hoặc cấu hình hệ thống.
+- Các file và thư mục trong pseudo file systems được tạo và quản lý động bởi kernel.
+
+---
+
+2. Các loại pseudo file systems phổ biến
+---------------------------------------
+
+| Tên hệ thống tập tin | Mount point                 | Mục đích chính                              |
+|---------------------|------------------------------|---------------------------------------------|
+| `/proc`             | `/proc`                      | Thông tin hệ thống và tiến trình (process)  |
+| `/sys`              | `/sys`                       | Thông tin và điều khiển thiết bị (sysfs)    |
+| `/dev`              | `/dev`                       | Thiết bị (device files)                     |
+| `tmpfs`             | `/run`, `/tmp` hoặc tùy mount| Bộ nhớ ảo tạm thời (RAM)                    |
+
+---
+
+3. Chi tiết từng hệ thống
+------------------------
+
+### `/proc` (procfs)
+
+- Chứa thông tin về kernel, cấu hình hệ thống, các tiến trình đang chạy.
+- Ví dụ: `/proc/cpuinfo`, `/proc/meminfo`, `/proc/[pid]/` cho từng tiến trình.
+- Dùng để đọc/ghi các tham số kernel runtime.
+
+### `/sys` (sysfs)
+
+- Cung cấp giao diện với các thiết bị phần cứng, driver.
+- Có thể thay đổi một số thuộc tính thiết bị bằng cách ghi file trong `/sys`.
+- Ví dụ: `/sys/class/net/eth0/` để xem trạng thái card mạng.
+
+### `/dev` (devtmpfs)
+
+- Chứa các file thiết bị (device nodes) đại diện cho phần cứng.
+- Ví dụ: `/dev/sda` (ổ đĩa), `/dev/ttyUSB0` (cổng USB serial).
+- Kernel tự động tạo và quản lý file trong `/dev` khi thiết bị được cắm hoặc tháo.
+
+### `tmpfs`
+
+- Hệ thống tập tin ảo dùng RAM để lưu dữ liệu tạm thời.
+- Thường dùng cho thư mục `/tmp`, `/run` để tăng tốc truy cập và tránh ghi đĩa nhiều.
+
+---
+
+4. Tại sao dùng pseudo file systems?
+-----------------------------------
+
+- Cung cấp giao diện đơn giản để tương tác với kernel và phần cứng.
+- Không cần ghi/đọc đĩa cứng, nhanh và hiệu quả.
+- Hỗ trợ quản trị, giám sát và điều khiển thiết bị dễ dàng.
+- Là cách chuẩn để hệ thống Linux expose thông tin nội bộ ra người dùng và ứng dụng.
+
+---
+
+5. Lệnh liên quan
+-----------------
+
+- `mount | grep proc` — Kiểm tra procfs đang mount chưa.
+- `cat /proc/cpuinfo` — Xem thông tin CPU.
+- `ls /sys/class/net` — Liệt kê các thiết bị mạng.
+- `ls /dev` — Xem các thiết bị phần cứng.
+- `df -h` — Kiểm tra tmpfs chiếm bao nhiêu RAM.
+
+---
+
+6. Tóm tắt
+----------
+
+| Tên hệ thống | Loại     | Mục đích                        |
+|--------------|----------|--------------------------------|
+| `/proc`      | procfs   | Thông tin hệ thống, tiến trình  |
+| `/sys`       | sysfs    | Thông tin, điều khiển phần cứng |
+| `/dev`       | devtmpfs | Thiết bị (device nodes)         |
+| `tmpfs`      | tmpfs    | Bộ nhớ RAM tạm thời             |
+
+---
 cat : Hiển thị toàn bộ nội dung của một (hoặc nhiều) tập tin văn bản ra màn hình (stdout).
 uname hoặc uname -s : hển thị thông tin hệ điều hành 
 Lệnh uname -m : dùng để hiển thị kiến trúc máy tính (machine hardware name) mà hệ điều hành đang chạy trên đó.
